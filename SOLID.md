@@ -18,8 +18,10 @@ El primer principio de SOLID llamado Principio de Responsabilidad Única indica 
 
   1. En relación al testing. Se simplifica 
         porque una clase tiene una única responsabilidad... 
+
   2. Se disminuye el acoplamiento pirque menor funcionalidad 
         en una clase hará que esta tenga menos dependencias. 
+        
   3. La organización de las clases y los paquetes 
         será mejor y más sencillo.
 
