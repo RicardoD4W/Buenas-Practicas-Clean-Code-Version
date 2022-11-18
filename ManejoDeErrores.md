@@ -1,4 +1,4 @@
-# MANEJO DE ERRORES
+# ERRORES
 
 ## 1. No ignores los errores capturados:
 
