@@ -1,6 +1,6 @@
 
 
-* [Principio de Responsabilidad Única](#SRP)
+* [Principio de Responsabilidad Única(SRP)](#SRP)
 * [Principio de abierto/cerrado (OCP)](#OCP)
 * [Principio de sustitución de Liskov (LSP)](#LSP)
 * [Principio de segregación de la interfaz (ISP)](#ISP)
