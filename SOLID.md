@@ -9,7 +9,6 @@
 
 
 ## SRP
-
 El primer principio de SOLID llamado Principio de Responsabilidad Única indica que una clase debería ser responsable de una única funcionalidad. En otras palabras, la clase solo debería tener una única razón para cambiar.
 
 
@@ -47,8 +46,7 @@ Este código viola el principio de responsabilidad unica. Está haciendo dos cos
 Sería conveniente separar la clase en dos. Una para lo específico del login y otra para la funcionalidad de envío de mensajes.
 
 
-## OCP
-   
+## OCP  
 El Principio de Abierto-Cerrado, del inglés "The Open-Close Principle (OCP)", nos viene a decir que cualquier entidad software (clases, módulos, funciones, etc.) debe de estar abierta para ser extendida en funcionalidad pero cerrada para ser modificada. Es decir, una clase que cumpla con OCP tiene estas dos características:
 
 
@@ -80,8 +78,6 @@ Con este diseño, la clase [Conductor] cumple con OCP, pues está abierta a camb
 
 
 ## LSP
-
-
 El principio de sustitución de Liskov nos dice que si en alguna parte de nuestro código estamos usando una clase, y esta clase es extendida, tenemos que poder utilizar cualquiera de las clases hijas y que el programa siga siendo válido.
 
 
@@ -114,7 +110,6 @@ Este es un ejemplo de LSP bien hecho ya que podemos cambiar la  [Operacion] a pl
 
 
 ## ISP
-
 El principio nos indica que una clase debe de implementar únicamente las interfaces que necesita, es decir, que no necesite tener que implementar métodos que no utilice. Se aplica a una interfaz amplia y compleja para escindirla en otras más pequeñas y específicas, de tal forma que cada cliente use solo aquella que necesite.
 
 Imaginemos que tenemos un negocio de venta de ordenadores de escritorio, sabemos que todas las ordenadores deberían de extender de la clase Ordenador y tendríamos algo como esto:
