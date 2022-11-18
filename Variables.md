@@ -1,4 +1,4 @@
-# Variables
+# VARIABLES
 
 ## 1. Utilizar nombres fáciles de pronunciar y con sentido:
 
