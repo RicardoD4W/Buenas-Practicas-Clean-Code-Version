@@ -1,9 +1,9 @@
 # SOLID
 
-* [Principio de Responsabilidad Única(SRP)](##SRP)
-* [Principio de abierto/cerrado (OCP)](##OCP)
-* [Principio de sustitución de Liskov (LSP)](##LSP)
-* [Principio de segregación de la interfaz (ISP)](##ISP)
+* [Principio de Responsabilidad Única(SRP)](#SRP)
+* [Principio de abierto/cerrado (OCP)](#OCP)
+* [Principio de sustitución de Liskov (LSP)](#LSP)
+* [Principio de segregación de la interfaz (ISP)](#ISP)
 * [Principio de inversión de la dependencia (DIP)](#DIP)
 
 
