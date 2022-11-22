@@ -32,7 +32,34 @@ El primer principio de SOLID llamado Principio de Responsabilidad Única indica 
 
 ### Mal uso
 
-![Mal uso SRP](./imgS/maluso.png)
+```java
+
+package solid;
+
+class UserLogin {
+
+    private final DataBase db;
+
+    UserLogin(DataBase db){
+      this.db = db;
+    }
+
+    void login (String userName, String password) {
+      User user = db.findUserByUserName(userName);
+      if (user == null){
+        //do something
+      }
+      //login process
+    }
+
+    void sendMail (User user, String msg){
+      //send email to user
+    }
+
+
+}
+
+```
 
 \
 Esta clase UserLogin tiene como responsabilidad realizar el proceso de login pero además le dimos la responsabilidad de de enviar mensajes al usuario.
@@ -40,7 +67,20 @@ Este código viola el principio de responsabilidad unica. Está haciendo dos cos
 
 
 ### Buen uso
-![Buen uso SRP](./imgS/buenuso.png)
+
+```java
+
+package solid;
+
+class EmailSender {
+
+    void sendMail (User user, String msg){
+      //send email to user
+    }
+
+}
+
+```
 
 \
 ¿Entonces qué deberíamos hacer?
