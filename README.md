@@ -1,13 +1,13 @@
 # Buenas Prácticas / Clean-Code
 
 * [Variables](#VARIABLES)  <!-- hecho --> 
-* [Funciones](#Funciones)
+* [Funciones](#Funciones) <!-- falat 1era parte -->
 * [Objetos y estructura de datos](#Objetos)  <!-- hecho --> 
 * [Clases](#Clases)  <!-- hecho --> 
 * [SOLID](#SOLID)    <!-- hecho --> 
 * [Manejo de errores](#Errores)  <!-- hecho --> 
-* [Formato](#Formato)
-* [Comentarios](#Comentarios)
+* [Formato](#Formato)  <!-- hecho --> 
+* [Comentarios](#Comentarios) <!--hwcho-->
 
 
 
@@ -224,6 +224,254 @@ function crearAppFarmacia(nombre = "SendSalud"){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 13. Evita condicionales negativos
+A la hora de hacer comparativos, comparar si es 'true' o '=='.... No compara si es no 'true' o no '=='....
+
+
+Mal uso:
+
+```javascript
+if (!condicionalNegativo (negativo)) {
+    // CODIGO
+}
+```
+
+Buen uso:
+
+```javascript
+if (condicionalNegativo (negativo)) {
+    // CODIGO
+}
+```
+---
+## 14. Evita condicionales
+Se debería usar **polimorfismo** para conserguir lo mismo en la gran mayoría de los casos ya que una función debería hacer únicamente una cosa.
+
+
+Mal uso:
+
+```javascript
+class Notas {
+    obtenerNotas(){
+        switch (this.tipo) {
+            case "trimestrel":
+                return this.notal()
+            case "trimestrez":
+                return this.nota1() + this.nota2() ::
+            case "trimestre}":
+                return this.notal() + this.nota2(): + this.nota3() :
+        }
+    }
+}
+```
+
+Buen uso:
+
+```javascript
+class Notas {
+}
+class trimestre1 extends Notas {
+    obtenerNotas(){
+        return this.notal();
+    }
+}
+class trimestre2 extends Notas {
+    obtenerNotas(){
+        return this.notal() + this.nota20);;
+    }
+}
+class trimestre3 extends Notas {
+    obtenerNotas(){
+        return this.notal() + this. nota2() + this.nota3();
+    }
+}
+```
+---
+## 15. Evita el control de tipos (parte 1)
+Javascript es un **lenguaje no tipado** y por eso a veces, nos aprovechamos de eso... es por eso, que se vuelve muy tentador el controlar los tipos de los argumentos de la función. La primera solución son APIs consistentes. Por API se entiende de que manera nos comunicamos con ese módulo/función.
+
+
+Mal uso:
+
+```javascript
+function organizarViaje(viaje) {
+    if (viaje instanceof Viajes) {
+        viaje. coche(this.local, new Destino("martos"));
+    } else if (viaje instanceof Car) {
+        viaje.moto(this.local, new Destino ("martos"));
+    }
+}
+```
+
+Buen uso:
+
+```javascript
+function organizarViaje (viaje) {
+    viaje.conducir(this. local, new Destino ("martos")).
+}
+```
+---
+
+## 16. Evita el control de tipos (parte 2)
+repetimos: **Javascript es un lenguaje no tipado**. Mantén tu código Javascript limpio, escribe tests y intenta tener revisiones de código para controlar los tipados dinámicos.
+
+
+Mal uso:
+
+```javascript
+function suma (numl, num2) {
+    if (typeof num1 == 'number' && typeof num2 == 'number'){
+        return num1 + num2;
+    }else console. log ('tienen que ser numeros')
+}
+```
+
+Buen uso:
+
+```javascript
+function suma(numl, num2) {
+    return num1 + num2:
+}
+```
+---
+## 17. No optimizes al máximo
+Los navegadores modernos hacen mucha optimización por detrás en tiempo de ejecución. Muchas veces, al interntar optimizar tu código... estás perdiendo el tiempo.
+
+
+Mal uso:
+
+```javascript
+for (let i = 0; tamaño = lista.length; i < tamaño; i++) {
+    // CODIGO
+}
+```
+
+Buen uso:
+
+```javascript
+for (let i = 0; i < tamaño; i++) {
+    // CODIGO
+}
+```
+---
+## 18. Borra código inútil
+El codigo duplicado, las funciones no usadas, comentarios desfasados... **¡BORRALAS!**
+
+Mal uso:
+
+```javascript
+function SumaPrueba (num1, num2) {
+    let suma = num1 + num2:
+    return suma;
+}
+
+//esta es la nueva funcion suma
+function Suma(num1, num2) {
+    return num1 + num2:
+}
+```
+
+Buen uso:
+
+```javascript
+function Suma(num1, num2) {
+    return num1 + num2:
+}
+```
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Objetos
 ## Utiliza getters y setters
 
@@ -303,6 +551,35 @@ console.log(employee_bien.getName()) // Alfredo
 delete employee_bien.name
 console.log(employee_bien.getName()) // Alfredo
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -890,3 +1167,310 @@ obtenerInformacion()
         informarAlUsuario(error);
     });
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Formato
+## 1. Usa consistenemente la capitalización
+Define unas **reglas de capitalización** con tu equipo y sed constantes.
+
+
+
+Mal uso:
+
+```javascript
+    let num1;
+    let NUM2;
+
+    function sumayresta() { }
+    function multiplicaydivide() { }
+    
+    class Perro { }
+    class GATO { }
+```
+
+Buen uso:
+
+```javascript
+let num3;
+let numz;
+
+function sumaYresta() { }
+function multiplicaYdivide) { }
+
+class Perro { }
+class Gato { }
+```
+---
+## 2. Funciones que llaman y funciones que son llamadas, deberían estar cerca
+Si una función llama a otra, haz que esta función que va a ser llamada **esté lo más cerca posible** de la función que la llama. Idealmente, situa siempre la función que va a ser llamada justo después de la función que la ejecuta.
+
+
+
+Mal uso:
+
+```javascript
+class Calculadora {
+    suma(num1, num2) {
+        //codigo
+    }
+    resta(numl, num2) {
+        //codigo
+    }
+    operaciones(){
+        this-suma(1, 2);
+        this.resta(1, 2);
+        this.multiplica(1,2);
+    }
+    multiplica (num1, num2) {
+    //codigo
+    }
+}
+
+
+```
+
+Buen uso:
+
+```javascript
+
+class Calculadora {
+    operaciones(){
+        this-suma(1,2);
+        this.resta(1, 2);
+        this.multiplica(1,2);
+    }
+    suma (num1, num2) {
+        //codigo
+    }
+    resta(numl, num2) {
+        //codigo
+    }
+    multiplica (num1, num2) {
+        //codigo
+    }
+}
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Comentarios
+## 1. Comenta únicamente la lógica de negocio que es compleja
+Se dice que un buen código debería comentarse por si mismo. **Comentaremos solo logicas que consideremos complejas**
+
+
+Mal uso:
+
+```javascript
+    
+//valor 1
+let n1;
+
+//valor2
+let n2;
+
+//funcion que devuelve un suma
+function s(n1, n2) {
+    return n1 + n2:
+}
+
+
+```
+
+Buen uso:
+
+```javascript
+
+let numerol;
+let numeroz;
+
+//funcion que devuelve un suma
+function suma (numerol, numero2) {
+    return numero1 + numero2;
+}
+
+
+```
+---
+## 2. No dejes código comentado en tu repositorio
+Si comenta un código porque en breves o algun día lo vas a necesitas... **borralo**. El código que borres consta en alguna de tus versiones de tu código fuente, **usa git**
+
+
+Mal uso:
+
+```javascript
+
+function suma() { }
+
+//function resta()) {}
+
+//function divide () {}
+
+
+```
+
+Buen uso:
+
+```javascript
+function suma() { }
+
+//function resta()) {}
+
+//function divide () {}
+```
+---
+## 3. No hagas un diario de comentarios
+No hay motivo alguno para tener código muerto, código comentado y aún menos, un diadrio o resumen de modificaciones en tus comentarios.
+
+
+Mal uso:
+
+```javascript
+/**
+* 2022-10-25: funcion resta terminada
+* 2022-10-01: funcion divide terminada
+* 2022-10-03: funcion multiplica terminada
+*/
+
+function suma(a, b) {
+    return a + b;
+}
+```
+
+Buen uso:
+
+```javascript
+function suma(a, b) {
+    return a + b;
+}
+```
+---
+## 4. Evita los marcadores de secciones
+Evidente, el nombre de las propias variables, fuciones, clases... deberian de ser lo **suficientemente claro** para ser entendible
+
+Mal uso:
+
+```javascript
+/////////////////////////////////////////////
+//Funcion suma
+/////////////////////////////////////////////
+function suma(a, b) {
+    return a + b:
+}
+
+/////////////////////////////////////////////
+//Funcion resta
+/////////////////////////////////////////////
+function resta(a, b) {
+    return a - b;
+}
+```
+
+Buen uso:
+
+```javascript
+function suma(a, b) {
+    return a + b:
+}
+
+function resta(a, b) {
+    return a - b;
+}
+```
+---
+
